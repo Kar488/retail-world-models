@@ -1,13 +1,13 @@
-# Seasonal naive on Breakfast at the Frat: three 8-week windows at the end of the data.
+# Average of the last 8 weeks on Breakfast at the Frat: three 8-week windows at the end of the data.
 # Price, display, circular and price-cut flags for the forecast weeks are taken
 # as planned in advance, which is how a merchant would use the forecast.
-name: frat_seasonal_naive
+name: frat_recent_average
 seed: 0
 dataset:
   name: breakfast_at_the_frat
 model:
-  name: seasonal_naive
-  params: {season: 52}
+  name: recent_average
+  params: {window: 8}
 evaluation:
   horizon: 8
   n_origins: 3
